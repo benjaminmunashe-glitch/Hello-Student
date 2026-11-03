@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benjamin</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .card {
+      width: 100%;
+      max-width: 640px;
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .date {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111827;
+        --card: #1f2937;
+        --text: #f3f4f6;
+        --muted: #9ca3af;
+        --accent: #60a5fa;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Benjamin</h1>
+
+    <div class="subtitle">
+      MSc student, National College of Ireland
+    </div>
+
+    <p>
+      I care about helping businesses make better decisions by turning data into
+      practical insights that improve customer experiences and operational
+      performance.
+    </p>
+
+    <div class="date" id="today">Loading date...</div>
+  </main>
+
+  <script>
+    const dateElement = document.getElementById("today");
+    const today = new Date();
+    dateElement.textContent =
+      "Today's date: " +
+      today.toLocaleDateString(undefined, {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
+  </script>
+</body>
+</html>
